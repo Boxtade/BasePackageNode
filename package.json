@@ -1,0 +1,23 @@
+{
+  "name": "basepackagenode",
+  "version": "1.0.0",
+  "description": "Projet de base pour une application nodejs.",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boxtade/BasePackageNode.git"
+  },
+  "author": "Kévin Salles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boxtade/BasePackageNode/issues"
+  },
+  "homepage": "https://github.com/Boxtade/BasePackageNode#readme"
+}
