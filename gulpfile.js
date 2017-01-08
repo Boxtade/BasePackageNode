@@ -3,7 +3,11 @@ var uglify = require("gulp-uglify");
 var rename =  require("gulp-rename");
 var clean = require('gulp-clean');
 var mocha = require('gulp-mocha');
-
+var fs = require('fs');
+var util = require('gulp-util');
+var GulpSSH = require('gulp-ssh')
+console.log(util.env.pwd);
+var pwd = util.env.pwd;
 var source = './src/';
 var destination = './dist/';
 
@@ -37,3 +41,21 @@ gulp.task('mocha', function() {
 });
 
 
+
+var config = {
+    host: '158.69.218.26',
+    port: 22,
+    username: 'root',
+    password: pwd
+};
+
+var gulpSSH = new GulpSSH({
+    ignoreErrors: false,
+    sshConfig: config
+});
+
+gulp.task('deploy',['release'],function(){
+    return gulp
+        .src(['./dist/**'])
+        .pipe(gulpSSH.dest('/var/www/dist'))
+});
