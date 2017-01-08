@@ -14,7 +14,7 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "mocha --ui tdd",
+    "test": "gulp mocha",
     "start": "node ./BasePackageNode.js",
     "debug": "node ./src/index.js"
   },
