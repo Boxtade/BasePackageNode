@@ -40,7 +40,10 @@ gulp.task('mocha', function() {
         .pipe(mocha({ reporter: 'list' , ui: 'tdd'}));
 });
 
-
+gulp.task('coverage', function() {
+    return gulp.src(['./test/**/*.js'], { read: false })
+        .pipe(mocha({ reporter: 'list' , ui: 'tdd'}));
+});
 
 var config = {
     host: '158.69.218.26',
